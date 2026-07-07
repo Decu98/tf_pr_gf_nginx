@@ -1,11 +1,12 @@
 # IaC
 
 ## Tools
-Terraform
-Ansible
+Terraform\
+Ansible\
+Helm\
 
 ## Goals
-IaC that deploy Prometheus with Grafana for monitoring purpose
+IaC that deploy Prometheus with Grafana for monitoring purpose\
 NGINX as a target of monitoring
 
 ## Assumptions
@@ -25,6 +26,14 @@ NGINX as a target of monitoring
 - Ansible (core) >= 2.21
 - Ansible (kubernetes.core)
 - Helm >= 3.0.0
+
+## Variables
+- kubernetes_context - set in **main.tf**, targeded kontext in kubernetes
+- observability_namespace - set in **main.tf**, namespace for obervability pods
+- prometheus_helm_values - set in **main.tf**, path to helm values of prometheus
+
+## Secrets
+- grafana_admin_password - set on apply, password for admin in grafana
 
 ## Steps
 
