@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Adding stable chart for Prometheus and Grafana
+      kubernetes.core.helm_repository:
+        name: prometheus-community
+        repo_url: "https://prometheus-community.github.io/helm-charts"
+    - name: Prometheus + Grafana deploy by HELM
+      kubernetes.core.helm:
+        name: prometheus-grafana
+        chart_ref: prometheus-community/kube-prometheus-stack
+        chart_version: 87.10.1
+        release_namespace: "{{ observability_namespace }}"
+        create_namespace: false
+        context: "{{ kubernetes_context }}"
+        values_files: "{{ values_files}}"
