@@ -4,10 +4,10 @@ variable "kubernetes_context" {
     description = "Context Name of Kubernetes"
 }
 
-variable "prometheus_helm_values" {
+variable "grafana_admin_password" {
     type = string
-    default = "./helm/prometheus/values.yaml"
-    description = "Prometheus Helm Values Path"
+    sensitive = true
+    description = "Grafana Admin Password"
 }
 
 variable "observability_namespace" {
