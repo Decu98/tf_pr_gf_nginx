@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Adding stable chart for Nginx-Ingress
+      kubernetes.core.helm_repository:
+        name: ingress-nginx
+        repo_url: "https://kubernetes.github.io/ingress-nginx"
+    - name: Nginx-Ingress deploy by HELM
+      kubernetes.core.helm:
+        name: ingress-nginx
+        chart_ref: ingress-nginx/ingress-nginx
+        chart_version: 4.15.1
+        release_namespace: "{{ ingress_namespace }}"
+        create_namespace: false
+        context: "{{ kubernetes_context }}"
+        values_files: "{{ values_files }}"

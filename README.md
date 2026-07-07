@@ -30,6 +30,7 @@ NGINX as a target of monitoring
 ## Variables
 - kubernetes_context - set in **main.tf**, targeded kontext in kubernetes
 - observability_namespace - set in **main.tf**, namespace for obervability pods
+- ingress_namespace - set in **main.tf**, namespace for nginx ingress
 - prometheus_helm_values - set in **main.tf**, path to helm values of prometheus
 
 ## Secrets

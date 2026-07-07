@@ -9,6 +9,12 @@ resource "kubernetes_namespace_v1" "observability_namespace" {
   }
 }
 
+resource "kubernetes_namespace_v1" "ingress_namespace" {
+  metadata {
+    name = var.ingress_namespace
+  }
+}
+
 resource "kubernetes_secret_v1" "grafana-admin" {
   metadata {
     name = "grafana-admin"

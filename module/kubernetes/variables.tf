@@ -14,3 +14,8 @@ variable "observability_namespace" {
     type = string
     description = "Namespace for Prometheus and Grafana"
 }
+
+variable "ingress_namespace" {
+    type = string
+    description = "Namespace for Nginx-Ingress"
+}
