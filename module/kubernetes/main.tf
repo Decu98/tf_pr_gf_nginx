@@ -18,7 +18,7 @@ resource "kubernetes_namespace_v1" "ingress_namespace" {
 resource "kubernetes_secret_v1" "grafana-admin" {
   metadata {
     name = "grafana-admin"
-    namespace = var.observability_namespace
+    namespace = kubernetes_namespace_v1.observability_namespace.metadata[0].name
   }
   data = {
     "admin-user" =  "admin"

@@ -7,14 +7,13 @@ Helm
 
 ## Goals
 IaC that deploy Prometheus with Grafana for monitoring purpose\
-NGINX as a target of monitoring
+INGRESS NGINX as a target of monitoring
 
 ## Assumptions
 
 - We are using **Kubernetes** as a target of deployment
 - **Kubernetes** is already existing, user that use the REPO have access to Kubernetes Context
 - Defualt Kubernetes config is in `~/.kube/config`
-- **NGINX** is normal server not a NGINX-INGRESS
 - OS os user is Linux or UNIX compatible
 - Deployments are done using **HELM**
 
@@ -32,6 +31,7 @@ NGINX as a target of monitoring
 - observability_namespace - set in **main.tf**, namespace for obervability pods
 - ingress_namespace - set in **main.tf**, namespace for nginx ingress
 - prometheus_helm_values - set in **main.tf**, path to helm values of prometheus
+- nginx_helm_values - set in **main.tf**, path to helm values of nginx
 
 ## Secrets
 - grafana_admin_password - set on apply, password for admin in grafana
