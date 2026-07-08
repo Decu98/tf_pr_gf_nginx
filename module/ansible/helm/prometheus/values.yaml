@@ -1428,12 +1428,12 @@ grafana:
   ingress:
     ## If true, Grafana Ingress will be created
     ##
-    enabled: false
+    enabled: true
 
     ## IngressClassName for Grafana Ingress.
     ## Should be provided if Ingress is enable.
     ##
-    # ingressClassName: nginx
+    ingressClassName: "nginx"
 
     ## Annotations for Grafana Ingress
     ##
@@ -1450,7 +1450,8 @@ grafana:
     ##
     # hosts:
     #   - grafana.domain.com
-    hosts: []
+    hosts: 
+      - grafana.localhost
 
     ## Path for grafana ingress
     path: /
@@ -3883,9 +3884,9 @@ prometheus:
   #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
 
   ingress:
-    enabled: false
+    enabled: true
 
-    ingressClassName: ""
+    ingressClassName: "nginx"
 
     annotations: {}
     labels: {}
@@ -3898,7 +3899,8 @@ prometheus:
     ##
     # hosts:
     #   - prometheus.domain.com
-    hosts: []
+    hosts: 
+      - prometheus.localhost
 
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
     ##

@@ -25,7 +25,3 @@ variable "nginx_helm_values" {
     default = "./helm/nginx-ingress/values.yaml"
     description = "Nginx Helm Values Path"
 }
-
-variable "ingress_class_name" {
-    
-}

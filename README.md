@@ -3,7 +3,7 @@
 ## Tools
 Terraform\
 Ansible\
-Helm\
+Helm
 
 ## Goals
 IaC that deploy Prometheus with Grafana for monitoring purpose\
@@ -43,3 +43,15 @@ terraform init
 terraform plan
 terraform apply
 ```
+## Minikube
+
+To use DNS with minikube tunel is needed and set /etc/hosts routes
+```
+minikube tunnel
+```
+**/etc/hosts**
+```
+127.0.0.1 grafana.localhost
+127.0.0.1 prometheus.localhost
+```
+
